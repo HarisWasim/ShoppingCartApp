@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with Create React App
 
-## Available Scripts
+To run project:
 
-In the project directory, you can run:
+Step 1: Move to 'GOPUFF-INTERVIEW' directory
+Step 2: Execute command 'npm install'
+Step 3: Execute command 'npm run'
+Step 4: In your browser, Open http://localhost:3000 to view it in the browser.
 
-### `yarn start`
+Tip:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Click on 'My Cart' to execute API fetch and view all elements in shopping cart
+- Click back on 'Welcome to goPuff' to go back to home screen.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Technical Choices:
 
-### `yarn test`
+Some of the choices I made throughout the implementation of this project include:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Separated components into isolated pieces based on functionality and purpose. This architect allows for seamless modification and maintenance of code to ensure scalability and ease of development:
+  - App.js is the parent component that renders the HomePage.
+  - HomePage.js serves as the landing page that renders the entire front screen.
+  - ListCartItems.js serves as the shopping cart screen that renders all of the metadata associated with the shopping experience.
+- Leveraged react-bootstrap and material-ui to ensure clean css styling and ease of implementation due to time constraint. Initial focus was to get functionality in place with the alloted time. Afterwards, focused on how to delineate from libraries. This could be considered an improvement I would make if given the chance.
+- Rendered each cart element into its own card. Used javascript's map function on array of JSON response to return unique JSX component for each item in shopping cart, while following design patterns.
+- Included toolbar that renders navigation features throughout the entire version of the goPuff website. Main features are, clickable home button and clickable My Cart button, which both serve navigational purposes.
+- When the description of certain cart elements is too long, the component automatically allows for scrolling through the description in the vertical direction.
+- Added the 'By: {Brand Name}' underneath title of product.
+- Title of product also includes whether there is a sale, if there is a sale price.
+- Leveraged flex container to flexibly display elements in the shopping cart with a vertical scrollable view.
+- Cart items render quantity associated with each element.
 
-### `yarn build`
+Improvements/Optimizations:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Would add functionality to view more info to grab metadata associated with each item in the shopping cart.
+- Implement a distinguishable design pattern to easily separate each cart element (border, different background color, etc.).
+- Fully-implement search bar to filter through cart elements on page the moment keyPressed = enter. At the moment, search bar input is only present. Maybe begin this feature by just having a simple console.log() in place to return all elements that have the substring matching the one inputted in the search bar. Additionally, complete the side navigation menu button to allow for additional navigation features, if desired.
+- Beautify entire screen with a bit more alignment optimizations
+- Make home screen more welcoming and 'homey'
+- Functionality to update cart and the quantity of elements within it. Additionally, have any changes to the cart change the sale total and subtotal that is calculated.
+- Have this data persist on the backend.

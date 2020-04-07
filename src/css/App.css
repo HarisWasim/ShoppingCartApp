@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 18rem;
+  max-height: 3600px;
+  min-height: 350px;
+  margin: 20px;
+  flex: 0 1 auto;
+  display: block;
+}
+
+.sale {
+  color: red;
+  font-weight: 700;
+}
+
+.summary {
+  max-height: 36px;
+  min-height: 35px;
+}
+
+.title {
+  font-weight: 700;
+}
